@@ -1,12 +1,12 @@
 body {
-    background-image: url("../images/burnt-orange-background.jpg");
+    background-image: url("../images/blackgrey2.jpg");
     
 }
 
 h1 {
     font-family: 'Bungee Shade', cursive; 
     font-size: 60px;
-    color: white;
+    color: rgb(165, 14, 165);
 }
 
 p {
@@ -14,4 +14,19 @@ p {
     font-weight: bold;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+#score {
+    margin-top: 30px;
+}
+
+#deco {
+    width: 375px;
+    height: 375px;
+    margin-top: 150px;
 }
