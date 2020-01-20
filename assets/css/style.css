@@ -16,9 +16,12 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-img {
+.crystal {
     width: 100px;
     height: 100px;
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
 }
 
 #score {
@@ -26,7 +29,7 @@ img {
 }
 
 #deco {
-    width: 375px;
-    height: 375px;
-    margin-top: 150px;
+    width: 80%;
+    height: 80%;
+    margin-top: 20%;
 }
