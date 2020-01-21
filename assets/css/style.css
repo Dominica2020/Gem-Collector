@@ -29,7 +29,33 @@ p {
 }
 
 #deco {
-    width: 80%;
-    height: 80%;
-    margin-top: 20%;
+    width: 70%;
+    height: 70%;
+    margin-top: 5%;
 }
+
+#wins, #losses {
+
+}
+
+#total-score {
+    background-color: black;
+    padding: 10px;
+}
+
+#deco {
+    animation-name: example;
+    animation-duration: 4s;
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes example {
+    from {margin-top:20%;}
+    to {margin-left: 10%;}
+  }
+  
+  /* Standard syntax */
+  @keyframes example {
+    from {margin-top:20%;}
+    to {margin-left: 10%;}
+  }
