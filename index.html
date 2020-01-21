@@ -29,41 +29,45 @@
                 <p>Each time when the game starts, the game will change the values of each crystal.</p>
             </div>
             <div class="col-sm-6">
-                <img id= "deco" src="assets/images/hiclipart.com.png" alt="crystal">
+                <img id="deco" src="assets/images/hiclipart.com.png" alt="crystal">
             </div>
         </div>
     </div>
     </div>
 
-    <div class="container" id="random-number">
+    <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h1>39</h1>
+                <h1 id="target-num">39</h1>
             </div>
             <div class="col-sm-6">
-                <p>Wins: 0</p>
-                <p>Losses: 0</p>
+                <p id="wins">Wins: 0</p>
+                <p id="losses">Losses: 0</p>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-3">
-                <img class= "crystal" src="assets/images/purple.jpg" alt="purple crystal">
+                <img class="crystal" id="purple" src="assets/images/purple.jpg" alt="purple crystal">
             </div>
             <div class="col-sm-3">
-                <img class= "crystal" src="assets/images/clear5.jpg" alt="diamond">
+                <img class="crystal" id="diamond" src="assets/images/clear5.jpg" alt="diamond">
             </div>
             <div class="col-sm-3">
-                <img class= "crystal" src="assets/images/pink.jpg" alt="pink crystal">
+                <img class="crystal" id="pink" src="assets/images/pink.jpg" alt="pink crystal">
             </div>
             <div class="col-sm-3">
-                <img class= "crystal" src="assets/images/violet.jpg" alt="violet crystal">
+                <img class="crystal" id="violet" src="assets/images/violet.jpg" alt="violet crystal">
             </div>
         </div>
-        <div class="row" id="score">
-            <p>Your total score is:</p>
+        <div class="row" id="score-is">
+            <div class="col-sm-6">
+                <p>Your total score is:</p>
+            </div>
         </div>
-        <div class="row" id="score-num">
-            <h1>0</h1>
+        <div class="row">
+            <div class="col-sm-6">
+                <h1 id="total-score">0</h1>
+            </div>
         </div>
     </div>
 
@@ -87,6 +91,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <!-- JS file -->
+    <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
