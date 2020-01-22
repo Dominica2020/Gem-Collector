@@ -11,37 +11,80 @@ var wins = 0;
 var losses = 0;
 var targetNum = 0;
 var totalScore = 0;
-var crystalPurple = 0;
-var crystalClear = 0;
-var crystalPink = 0;
-var crystalViolet = 0;
+var crystals = {
+    purple:
+    {
+        name: "Purple",
+        value: 0
+    },
+    clear:
+    {
+        name: "Clear",
+        value: 0
+    },
+    pink:
+    {
+        name: "Pink",
+        value: 0
+    },
+    violet:
+    {
+        name: "Violet",
+        value: 0
+    },
+};
+
 
 //Game Functions
+var getRandom = function(min, max) {
+ return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 var startGame = function () {
+    
     //reset total score
-    var totalScore = 0;
+    totalScore = 0;
 
     //set a new target score
-    targetNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-    console.log(targetNum);
+    targetNum = getRandom(19, 120);
 
     //set different values for each crystal
-    crystalPurple = Math.floor(Math.random() * 12) + 1;
-    console.log(crystalPurple);
-
-    crystalClear = Math.floor(Math.random() * 12) + 1;
-    console.log(crystalClear);
-
-    crystalPink = Math.floor(Math.random() * 12) + 1;
-    console.log(crystalPink);
-
-    crystalViolet = Math.floor(Math.random() * 12) + 1;
-    console.log(crystalViolet);
+    crystals.purple.value = getRandom(1, 12);
+    crystals.clear.value = getRandom(1, 12);
+    crystals.pink.value = getRandom(1, 12);
+    crystals.violet.value = getRandom(1, 12);
+    
+    //Test
+    console.log("Target Score " + targetNum);
+    console.log("purple: " + crystals.purple.value + " | clear: " + crystals.clear.value + " | pink: " + crystals.pink.value + " | violet: " + crystals.violet.value);
 
     //HTML targets
-    $("#total-score").html(totalScore);
     $("#target-num").html(targetNum);
+    $("#purple").html(crystals.purple.value);
+    $("#clear").html(crystals.clear.value);
+    $("#pink").html(crystals.pink.value);
+    $("#violet").html(crystals.violet.value);
+    
+}
+
+//Functions to change total score based on cystal clicks
+var addValues = function(crystals) {
+    totalScore = totalScore + crystals.value;
+    $("#total-score").html(totalScore);
+     
+    if (totalScore === targetNum) {
+         wins++;
+         startGame();
+     } 
+     else if (totalScore > targetNum) {
+         losses++;
+         startGame();
+     }
+    console.log("Your score " + totalScore);
+
+    //HTML updates
+    $("#wins").html(wins);
+    $("#losses").html(losses);
 
 }
 
@@ -50,70 +93,39 @@ startGame();
 
 //On-Click Functions 
 $("#purple").on("click", function () {
-    alert("test" + crystalPurple);
+    addValues(crystals.purple);
 })
-$("#diamond").on("click", function () {
-    alert("test");
+$("#clear").on("click", function () {
+    addValues(crystals.clear);
 })
 $("#pink").on("click", function () {
-    alert("test");
+    addValues(crystals.pink);
 })
 $("#violet").on("click", function () {
-    alert("test");
+    addValues(crystals.violet);
 })
-
-
 
 
 /* 
-
 Notes
 ------------
-Option One:
-var targetNum = function(start, range) {
-    var getRandom = Math.floor((Math.random() * range) + start);
-    while (getRandom > range) {
-        getRandom = Math.floor((Math.random() * range) + start);
-    }
-    return getRandom;
-}
-console.log(targetNum(19, 120));
+Seperate Option for random number generation:
+    targetNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    console.log("target number " + targetNum);
+
+    purple = Math.floor(Math.random() * 12) + 1;
+    console.log("purple " + purple);
+
+    clear = Math.floor(Math.random() * 12) + 1;
+    console.log("clear " + clear);
+
+    pink = Math.floor(Math.random() * 12) + 1;
+    console.log("pink " + pink);
+
+    violet = Math.floor(Math.random() * 12) + 1;
+    console.log("violet " + violet);
 ___________________________________________________________________________
-Option Two:
-var targetNum = function (start, range) {
-    var getRandom = Math.floor((Math.random() * (range - start)) + start);
-    return getRandom;
-}
-console.log(targetNum(19, 120));
 
-var crystalPurple = function (start, range) {
-    var getRandom = Math.floor((Math.random() * (range - start)) + start);
-    return getRandom;
-}
-console.log(crystalPurple(1, 12));
-
-var crystalClear = function (start, range) {
-    var getRandom = Math.floor((Math.random() * (range - start)) + start);
-    return getRandom;
-}
-console.log(crystalClear(1, 12));
-
-var crystalPink = function (start, range) {
-    var getRandom = Math.floor((Math.random() * (range - start)) + start);
-    return getRandom;
-}
-console.log(crystalPink(1, 12));
-
-var crystalViolet = function (start, range) {
-    var getRandom = Math.floor((Math.random() * (range - start)) + start);
-    return getRandom;
-}
-console.log(crystalViolet(1, 12));
 ___________________________________________________________________________
-HTML:
-$("#purple").html(crystalPurple);
-$("#diamond").html(crystalClear);
-$("#pink").html(crystalPink);
-$("#violet").html(crystalViolet);
 
 */
