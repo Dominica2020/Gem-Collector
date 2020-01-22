@@ -6,46 +6,68 @@
 5. When we win or lose (this is updated by an increment of 1); the game resets and starts all over again with new random numbers and total score is 0 again
 */
 
-//Variables//
-/*var wins = 0;
-var loses = 0;
+//Global Variables//
+var wins = 0;
+var losses = 0;
+var targetNum = 0;
 var totalScore = 0;
-var stonePurple = "";
-var stoneClear = "";
-var stonePink = "";
-var stoneViolet = "";*/
+var crystalPurple = 0;
+var crystalClear = 0;
+var crystalPink = 0;
+var crystalViolet = 0;
 
-var targetNum = function(start, range) {
-    var getRandom = Math.floor( (Math.random() * (range - start) ) + start );
+//On-Click Functions 
+$("#purple").on("click", function() {
+    alert("test");
+})
+$("#diamond").on("click", function() {
+    alert("test");
+})
+$("#pink").on("click", function() {
+    alert("test");
+})
+$("#violet").on("click", function() {
+    alert("test");
+})
+
+//Random Number Generation
+var targetNum = function (start, range) {
+    var getRandom = Math.floor((Math.random() * (range - start)) + start);
     return getRandom;
 }
 console.log(targetNum(19, 120));
-$("#target-num").html(targetNum);
 
-var crystalPurple = function(start, range) {
-    var getRandom = Math.floor( (Math.random() * (range - start) ) + start );
+var crystalPurple = function (start, range) {
+    var getRandom = Math.floor((Math.random() * (range - start)) + start);
     return getRandom;
 }
 console.log(crystalPurple(1, 12));
 
-var crystalClear = function(start, range) {
-    var getRandom = Math.floor( (Math.random() * (range - start) ) + start );
+var crystalClear = function (start, range) {
+    var getRandom = Math.floor((Math.random() * (range - start)) + start);
     return getRandom;
 }
 console.log(crystalClear(1, 12));
 
-var crystalPink = function(start, range) {
-    var getRandom = Math.floor( (Math.random() * (range - start) ) + start );
+var crystalPink = function (start, range) {
+    var getRandom = Math.floor((Math.random() * (range - start)) + start);
     return getRandom;
 }
 console.log(crystalPink(1, 12));
 
-var crystalViolet = function(start, range) {
-    var getRandom = Math.floor( (Math.random() * (range - start) ) + start );
+var crystalViolet = function (start, range) {
+    var getRandom = Math.floor((Math.random() * (range - start)) + start);
     return getRandom;
 }
 console.log(crystalViolet(1, 12));
 
+//HTML targets
+
+$("#target-num").text(targetNum);
+$("#purple").html(crystalPurple);
+$("#diamond").html(crystalClear);
+$("#pink").html(crystalPink);
+$("#violet").html(crystalViolet);
 
 
 
@@ -56,11 +78,12 @@ console.log(crystalViolet(1, 12));
 
 
 
-/*var targetNum = function(start, range) {
+
+/* Notes: var targetNum = function(start, range) {
     var getRandom = Math.floor((Math.random() * range) + start);
     while (getRandom > range) {
         getRandom = Math.floor((Math.random() * range) + start);
     }
     return getRandom;
 }
-console.log(targetNum(19, 120));*/
+console.log(targetNum(19, 120)); */

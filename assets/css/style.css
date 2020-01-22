@@ -1,10 +1,9 @@
 body {
-    background-image: url("../images/blackgrey2.jpg");
-    
+    background-image: url("../images/blackgrey2.jpg"); 
 }
 
 h1 {
-    font-family: 'Bungee Shade', cursive; 
+    font-family: 'Monoton', cursive; 
     font-size: 60px;
     color: rgb(165, 14, 165);
 }
@@ -34,13 +33,10 @@ p {
     margin-top: 5%;
 }
 
-#wins, #losses {
-
-}
-
 #total-score {
     background-color: black;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #deco {
@@ -59,3 +55,8 @@ p {
     from {margin-top:20%;}
     to {margin-left: 10%;}
   }
+
+
+
+
+  /* font-family: 'Bungee Shade', cursive; (alternative)*/
