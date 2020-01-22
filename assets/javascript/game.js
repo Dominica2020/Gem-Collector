@@ -16,19 +16,24 @@ var crystalClear = 0;
 var crystalPink = 0;
 var crystalViolet = 0;
 
-//On-Click Functions 
-$("#purple").on("click", function() {
-    alert("test");
-})
-$("#diamond").on("click", function() {
-    alert("test");
-})
-$("#pink").on("click", function() {
-    alert("test");
-})
-$("#violet").on("click", function() {
-    alert("test");
-})
+//Game Functions
+
+var startGame = function () {
+    //reset total score
+    var totalScore = 0;
+    //set a new target score
+    targetNum(19, 120);
+    //set different values for each crystal
+    crystalPurple(1, 12);
+    crystalClear(1, 12);
+    crystalPink(1, 12);
+    crystalViolet(1, 12);
+    //HTML targets
+    $("#total-score").html(totalScore);
+    $("#target-num").html(targetNum);
+    
+}
+
 
 //Random Number Generation
 var targetNum = function (start, range) {
@@ -61,13 +66,23 @@ var crystalViolet = function (start, range) {
 }
 console.log(crystalViolet(1, 12));
 
-//HTML targets
 
-$("#target-num").text(targetNum);
-$("#purple").html(crystalPurple);
-$("#diamond").html(crystalClear);
-$("#pink").html(crystalPink);
-$("#violet").html(crystalViolet);
+//Calling Start Game function
+startGame();
+
+//On-Click Functions 
+$("#purple").on("click", function () {
+    alert("test" + crystalPurple);
+})
+$("#diamond").on("click", function () {
+    alert("test");
+})
+$("#pink").on("click", function () {
+    alert("test");
+})
+$("#violet").on("click", function () {
+    alert("test");
+})
 
 
 
@@ -79,11 +94,29 @@ $("#violet").html(crystalViolet);
 
 
 
-/* Notes: var targetNum = function(start, range) {
+
+
+/* Notes:
+var targetNum = function(start, range) {
     var getRandom = Math.floor((Math.random() * range) + start);
     while (getRandom > range) {
         getRandom = Math.floor((Math.random() * range) + start);
     }
     return getRandom;
 }
-console.log(targetNum(19, 120)); */
+console.log(targetNum(19, 120));
+
+
+var targetNum = function (start, range) {
+    var getRandom = Math.floor((Math.random() * (range - start)) + start);
+    return getRandom;
+}
+console.log(targetNum(19, 120)) 
+
+HTML:
+$("#purple").html(crystalPurple);
+    $("#diamond").html(crystalClear);
+    $("#pink").html(crystalPink);
+    $("#violet").html(crystalViolet);
+
+*/

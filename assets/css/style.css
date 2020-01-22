@@ -2,6 +2,10 @@ body {
     background-image: url("../images/blackgrey2.jpg"); 
 }
 
+.container {
+    background-color: black;
+}
+
 h1 {
     font-family: 'Monoton', cursive; 
     font-size: 60px;
@@ -31,12 +35,6 @@ p {
     width: 70%;
     height: 70%;
     margin-top: 5%;
-}
-
-#total-score {
-    background-color: black;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 #deco {
