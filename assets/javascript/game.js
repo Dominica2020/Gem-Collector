@@ -83,8 +83,8 @@ var addValues = function(crystals) {
     console.log("Your score " + totalScore);
 
     //HTML updates
-    $("#wins").html(wins);
-    $("#losses").html(losses);
+    $("#wins").html("Wins: " + wins);
+    $("#losses").html("Losses: " + losses);
 
 }
 
