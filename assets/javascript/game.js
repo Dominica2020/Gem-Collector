@@ -44,6 +44,7 @@ var startGame = function () {
     
     //reset total score
     totalScore = 0;
+    $("#total-score").html(totalScore);
 
     //set a new target score
     targetNum = getRandom(19, 120);

@@ -19,7 +19,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <h1>Crystals Collector!</h1>
                 <p>You will be given a random number at the start of the game.</p>
                 <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to
@@ -29,35 +29,39 @@
                 <p>The value of each crystal is hidden from you until you click on it.</p>
                 <p>Each time when the game starts, the game will change the values of each crystal.</p>
             </div>
-            <div class="col-sm-6">
-                <img id="deco" src="assets/images/hiclipart.com.png" alt="crystal">
-            </div>
         </div>
+
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-12">
                 <h1 id="target-num"></h1>
             </div>
-            <div class="col-sm-8">
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
                 <p><span id="wins">Wins: 0</span></p>
                 <p><span id="losses">Losses: 0<span></p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <img class="crystal" id="purple" src="assets/images/purple.jpg" alt="purple crystal">
-                <img class="crystal" id="clear" src="assets/images/clear5.jpg" alt="clear crystal">
-                <img class="crystal" id="pink" src="assets/images/pink.jpg" alt="pink crystal">
-                <img class="crystal" id="violet" src="assets/images/violet.jpg" alt="violet crystal">
-            </div>
-        </div>
+
         <div class="row" id="score-is">
             <div class="col-sm-6">
                 <p>Your total score is:</p>
             </div>
         </div>
+
         <div class="row">
             <div class="col-sm-6">
                 <h1><span id="total-score"></span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12" id="crystalBox">
+                <img class="image-fluid" class="crystal" id="purple" src="assets/images/purple.jpg" alt="purple crystal">
+                <img class="image-fluid" class="crystal" id="clear" src="assets/images/clear5.jpg" alt="clear crystal">
+                <img class="image-fluid" class="crystal" id="pink" src="assets/images/pink.jpg" alt="pink crystal">
+                <img class="image-fluid" class="crystal" id="violet" src="assets/images/violet.jpg" alt="violet crystal">
             </div>
         </div>
 
